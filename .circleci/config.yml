@@ -6,7 +6,7 @@ jobs:
   build-release:
     executor:
       name: android/android-docker
-      tag: default
+      tag: 2024.07-ndk
     steps:
       - run: git clone git@github.com:qufighter/SDL_ColorPick.git
       - run: cd SDL_ColorPick/android-project
