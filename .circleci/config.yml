@@ -7,12 +7,11 @@ jobs:
       name: android/android-docker
       tag: 2024.07-ndk
     steps:
-      - run: git clone -q --depth 1 https://github.com/qufighter/SDL_ColorPick.git
+      - run: git clone -q https://github.com/qufighter/SDL_ColorPick.git
       - run: git clone -q --branch release-2.0.5 --depth 1 https://github.com/libsdl-org/SDL_image.git SDL2_image
       - run: git clone -q --branch release-2.0.10 --depth 1 https://github.com/libsdl-org/SDL.git SDL2
       - run: ln -sf SDL_ColorPick/android-project/app/jni/SDL_image SDL2_image
       - run: ln -sf SDL_ColorPick/android-project/app/jni/SDL SDL2
-      - run: cd SDL_ColorPick/android-project && pwd && ls
       - run:
           name: Create builds
           command: cd SDL_ColorPick/android-project && pwd && ls && ./buildAllRelease.sh
